@@ -1,0 +1,48 @@
+example-import:
+
+  connections: !include ${define:env}-connections.yaml
+
+    db2:
+      type: db2
+      url: jdbc:db2://[HOST]:[PORT]/[DATABASE]
+      username: [userame]
+      password: [password]
+      description:
+
+    hive:
+      type: hive
+      username: 
+      description:
+
+
+
+  mappings:
+
+    defaults:
+      source:
+        connection: db2
+        database: [schema]
+        num-connections: 1
+        format: jdbc
+      destination:
+        connection: hive
+        database: ${define:database}
+        create-backup: True
+        create-database: False
+        write-disposition: overwrite
+        compute-statistics: True
+        format: orc
+
+    my-mapping: 
+      source: 
+         num-connections: 10
+         column: prvdr_sk
+         table: fps_prvdr
+      destination: 
+         table: fps_prvdr_${timestamp:%Y%m%d}
+
+
+
+
+
+

@@ -1,0 +1,12 @@
+    db2:
+      type: db2
+      url: jdbc:db2://[HOST]:[PORT]/[DATABASE]
+      username: [username]
+      password: [password]
+      description:
+
+    hive:
+      type: hive
+      username: 
+      description:
+
