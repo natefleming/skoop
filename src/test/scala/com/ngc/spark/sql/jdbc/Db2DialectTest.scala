@@ -23,7 +23,7 @@ class Db2DialectTest extends FlatSpec with Matchers {
     val clazz = java.lang.Class.forName("com.ngc.spark.sql.jdbc.Db2Dialect")
     val instance = clazz.newInstance().asInstanceOf[JdbcDialect]
     JdbcDialects.registerDialect(instance)
-    val registeredDialect = JdbcDialects.get("jdbc:db2://tcmslpp01049_01050_vip.prod:50000/FPS2_MTE")
+    val registeredDialect = JdbcDialects.get("jdbc:db2://hostname:port/FPS2_MTE")
     assert(registeredDialect.getTruncateQuery("mytable").endsWith("IMMEDIATE"))
   }
   
