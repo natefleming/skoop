@@ -154,6 +154,17 @@ For example:
 ```
 
 
+## Including Configuration
+
+It is sometimes convenient to externalize parts of the mapping file. For example to support multiple environments you may define connection information for each environment. Then import the appropriate connection into the mappings file at run time.
+This can be accomplished by using ```!include``` directive
+
+```
+For example:
+
+	# In this example ${d:environment} is provided on the command line using --define environment=[my-env]
+	connections: !include ${define:environment}-connnections.yaml
+```
 
 ## JdbcDialect
 
