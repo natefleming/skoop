@@ -5,8 +5,12 @@
 
 Usage: skoop.sh --conf [mappings-file] --properties-file [spark-defaults]
 
-  --mappings-conf        The location of a mappings file.
-                         If not provided it defaults to the value from the env config file.
+  --conf                  The location of a mappings file.
+                          If not provided it defaults to the value from the env config file.
+  --properties-file 
+  --log-level
+  --dry-run
+               
 
 ```
 
